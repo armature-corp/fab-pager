@@ -1,0 +1,50 @@
+<template>
+	<div if.bind="showStatusLine" class="pager-status-line">
+		<div>
+			${statusLine}
+		</div>
+	</div>
+
+	<div if.bind="showAdvancedControls" class="pager-advanced-controls-container">
+		<span>Page size: </span>
+		<span class="pager-size-button" click.delegate="decreasePageSize()">
+			<i class="icon-minus"></i>
+		</span>
+		<span class="pager-size-value">
+			${pageSize}
+		</span>
+		<span class="pager-size-button" click.delegate="increasePageSize()">
+			<i class="icon-plus"></i>
+		</span>
+	</div>
+
+	<div class="pager-controls-container">
+		<span click.delegate="prev()" class="pager-button pager-previous ${state.enablePrevious ? '' : 'disabled'}">
+			<i class="icon-arrow-left"></i>
+		</span>
+		
+		<span repeat.for="btn of state.buttons.lower" click.delegate="select(btn)" class="pager-button ${btn.selected ? 'selected' : ''}">
+			${btn.text}
+		</span>
+
+		<span if.bind="state.showLowerEllipsis" class="pager-button pager-ellipsis" disabled>
+			...
+		</span>
+
+		<span repeat.for="btn of state.buttons.inner" click.delegate="select(btn)" class="pager-button ${btn.selected ? 'selected' : ''}">
+			${btn.text}
+		</span>
+
+		<span if.bind="state.showUpperEllipsis" class="pager-button pager-ellipsis" disabled>
+			...
+		</span>
+
+		<span repeat.for="btn of state.buttons.upper" click.delegate="select(btn)" class="pager-button ${btn.selected ? 'selected' : ''}">
+			${btn.text}
+		</span>
+
+		<span click.delegate="next()" class="pager-button pager-next ${state.enableNext ? '' : 'disabled'}">
+			<i class="icon-arrow-right"></i>
+		</span>
+	</div>
+</template>

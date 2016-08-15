@@ -1,0 +1,23 @@
+<template>
+	<require from="./pager.css"></require>
+
+	<compose if.bind="showControlsAbove && hasMultiplePages && ready" view="./pager-controls.html"></compose>
+
+	<div if.bind="state.loading">
+		<template replaceable part="loading-view">
+			<div style="padding:20px;text-align:center;text-transform:uppercase;margin:auto;">
+				Loading...
+			</div>
+		</template>
+	</div>
+
+	<div if.bind="!state.loading">
+		<template replaceable part="pager-view">
+			<div style="padding: 10px;color:#fff;background-color:#ff0000">
+				REPLACE ME WITH A VIEW TO DISPLAY PAGED CONTENT
+			</div>
+		</template>
+	</div>
+
+	<compose if.bind="showControlsBelow && hasMultiplePages && ready" view="./pager-controls.html"></compose>
+</template>

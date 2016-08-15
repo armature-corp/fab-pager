@@ -1,0 +1,91 @@
+
+.pager-status-line {
+	padding: 10px;
+    font-size:11px;
+}
+
+.pager-controls-container {
+	padding: 10px;
+	text-align:right;
+
+	display: flex;
+	width: 400px;
+}
+
+.pager-controls-container .pager-button {
+	background-color: #fff;
+    background-color:#eee;
+	color: #4078c0;
+    border-radius: 3px;
+    margin:0 2px;
+    padding:3px;
+	text-align: center;
+	cursor: pointer;
+	flex: 1 1 auto;
+	max-width: 35px;
+}
+
+.pager-controls-container .pager-button.pager-ellipsis, 
+ .pager-ellipsis:hover {
+	background-color: transparent !important;
+	cursor: auto !important;
+	color: #4078c0 !important;
+}
+
+.pager-controls-container .pager-button.pager-previous {
+	width: auto;
+    background-color:white;
+}
+
+.pager-controls-container .pager-button.pager-next {
+	width: auto;
+    background-color:white;
+}
+
+.pager-controls-container .pager-button.pager-previous.disabled, .pager-controls-container .pager-button.pager-next.disabled {
+	color: #eee;
+	cursor: auto;
+}
+
+.pager-controls-container .pager-button.pager-previous.disabled:hover, 
+.pager-controls-container .pager-button.pager-next.disabled:hover {
+	background-color: #fff;
+}
+
+.pager-controls-container .pager-button.selected {
+	background-color: #4078c0 !important;
+	color: #fff;
+}
+
+.pager-controls-container .pager-button:hover {
+	background-color: #4078c0;
+	color: #fff;
+}
+
+
+.pager-advanced-controls-container {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.pager-advanced-controls-container .pager-size-value {
+	padding: 8px;
+	width: 40px;
+	height: 40px;
+}
+
+.pager-advanced-controls-container .pager-size-button {
+	cursor: pointer;
+	padding: 8px;
+	width: 24px;
+	height: 24px;
+	color: #4078c0;
+}
+
+.icon-arrow-right:before {
+	content: '>'
+}
+
+.icon-arrow-left:before {
+	content: '<';
+}
